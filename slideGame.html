@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload= "startF()">
+
+    <br>
+    <p id="draw"></p>
+    
+<script>
+
+function startF() {
+
+    var cc = [1,2,3,4,5,6,7,8,0];
+    var end = [[1,2,3],[4,5,6],[7,8,0]];
+
+    var play = new Array(3);
+    for(i = 0; i <= 2; i++) {
+        play[i] = new Array(3);
+    }
+
+    for(j = 0; j <= 2; j++) {
+        for(k = 0; k <= 2; k++) {
+            var r = Math.random()*cc.length;
+            r = Math.floor(r);
+            play[j][k] = cc[r];
+            delete cc[r];
+        }
+    }
+
+    var drawg = ""
+    for(d = 0; d <= 2; d++) {
+        for(dd = 0; dd <= 2; dd++) {
+            drawg += play[d][dd]+" "
+        }
+        drawg += "<br>"
+    }
+    document.querySelector("#draw").innerHTML=drawg
+
+}
+
+
+
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
